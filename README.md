@@ -1,72 +1,97 @@
-![Github Forks](https://img.shields.io/github/forks/Yixin0313/personal-homepage-template?style=flat)
-![Github Stars](https://img.shields.io/github/stars/Yixin0313/personal-homepage-template?style=flat)
-![License](https://img.shields.io/github/license/Yixin0313/personal-homepage-template)
+![Github Forks](https://img.shields.io/github/forks/motannb/mt.github.io?style=flat)
+![Github Stars](https://img.shields.io/github/stars/motannb/mt.github.io?style=flat)
+![License](https://img.shields.io/github/license/motannb/mt.github.io)
 
-# 通用个人主页模板：适用于学术和求职场景 | A general-purpose template: suitable for both academic and professional use.
+# Mt的学术主页 | Mt's Academic Homepage
 
 ## 预览 | Preview
-[![Screenshot of the Website](https://raw.githubusercontent.com/Yixin0313/personal-homepage-template/main/screenshot_full.png)](https://yixin0313.github.io/personal-homepage-template/)
+现代化的学术个人主页，展示研究成果、项目经历和学术荣誉。
+
+A modern academic personal homepage showcasing research achievements, project experience, and academic honors.
 
 ## 介绍 | Introduction
 
-这是一个**通用的个人主页模板**，基于 [Sen Li 的学术主页模板](https://github.com/senli1073/senli1073.github.io) 进行修改。  
+这是**Mt的学术个人主页**，专注于展示：
+- 🎓 教育背景：北京科技大学（本科）、中南大学（硕士）
+- 🔬 研究方向：红外测温技术、计算机视觉、智能传感
+- 📝 学术成果：IEEE TIM期刊论文、YAC2025最佳论文奖
+- 🏆 竞赛获奖：省级竞赛多项奖项
 
-我新增了**工作经历板块**，使其更加适用于程序员和求职者。并且使用了中英文对照版本。
+This is **Mt's academic homepage**, focusing on:
+- 🎓 Education: USTB (Bachelor), CSU (Master)
+- 🔬 Research: Infrared Temperature Measurement, Computer Vision, Intelligent Sensing
+- 📝 Publications: IEEE TIM papers, YAC2025 Best Paper Award
+- 🏆 Awards: Multiple provincial competition awards
 
-This is a **general-purpose personal website template**, modified from [Sen Li's academic template](https://github.com/senli1073/senli1073.github.io).  
+## 特色 | Features
 
-I have added a **work experience section**, making it more practical for programmers and job seekers.
+✨ 现代化设计风格，类似SuperDesign  
+🎨 渐变色彩方案，视觉效果优雅  
+📱 完全响应式布局，适配各种设备  
+🚀 平滑动画效果，提升用户体验  
+📊 清晰的学术成果展示  
 
-Bilibili教程视频：【【2025最新保姆级教程】手把手教你用github制作个人主页（申学找工作必备）】https://www.bilibili.com/video/BV16nNMeFEzm?vd_source=79b688b1a191b9f9e8204aa1c3d0adab
+✨ Modern design style, similar to SuperDesign  
+🎨 Gradient color scheme with elegant visual effects  
+📱 Fully responsive layout for all devices  
+🚀 Smooth animations for enhanced UX  
+📊 Clear academic achievement presentation  
 
-CSDN教程：https://blog.csdn.net/qq_45743991/article/details/145505150?spm=1001.2014.3001.5502
+## 快速开始 | Getting Started
 
-## 快速开始 | Getting Start
 ### 1. Fork 该仓库 | Fork this repository
-仓库名称应命名为 `<用户名>.github.io`，这样你的个人网站地址将是 `https://<用户名>.github.io/`。
-
-The repository name should be `<username>.github.io`, which will also be your website's URL.
-
-
-### 2.  编辑页面内容 | Edit page content
-(1) 进入你想存放项目的文件夹，并克隆新的仓库 | Go to the folder where you want to store your project, and clone the new repository:
-```
-git clone https://github.com/<username>/<username>.github.io.git
-```
-项目的目录结构如下 | The directory structure is as follows:
-
-```.
-.
-├── contents
-└── static
-    ├── assets
-    │   └── img
-    ├── css
-    └── js
+```bash
+git clone https://github.com/motannb/mt.github.io.git
+cd mt.github.io
 ```
 
-(2) 修改各个板块的内容 | Modify the content of each section, which corresponds to `contents/*.md`.
+### 2. 自定义内容 | Customize Content
 
-(3) 调整网站设置 | Adjust the title, copyright information, and other text of the website in `contents/config.yml`
+编辑以下文件以更新您的个人信息：
 
-(4) 替换图片 | Replace background image and photo with new ones for your web pages in `static/assets/img/`
+- `contents/config.yml` - 网站标题和版权信息
+- `contents/home.md` - 个人简介和教育背景
+- `contents/publications.md` - 学术论文和专利
+- `contents/awards.md` - 获奖经历
+- `contents/experience.md` - 研究和项目经历
+- `static/assets/img/` - 替换背景图片和个人照片
 
-(5) 提交更改 | Push it: 
+### 3. 本地预览 | Local Preview
+
+使用任何HTTP服务器预览网站，例如：
+
+```bash
+# 使用Python
+python -m http.server 8000
+
+# 或使用Node.js
+npx http-server
 ```
-git commit -am 'init'
-git push
+
+然后访问 `http://localhost:8000`
+
+### 4. 部署 | Deploy
+
+提交更改并推送到GitHub：
+
+```bash
+git add .
+git commit -m "Update personal information"
+git push origin main
 ```
 
+在GitHub仓库设置中启用GitHub Pages，选择main分支。
 
-### 3. 访问你的网站 | Enjoy
+## 技术栈 | Tech Stack
 
-打开浏览器，访问 https://<用户名>.github.io，即可查看你的个人主页
-
-Fire up a browser and go to `https://<username>.github.io`
-
-
+- 🎨 Bootstrap 5 - 响应式框架
+- 📝 Marked.js - Markdown渲染
+- 🔢 MathJax - 数学公式支持
+- ⚙️ JS-YAML - 配置文件解析
+- 💅 Custom CSS - 现代化样式
 
 ## License
-本项目基于 MIT 许可协议，你可以自由使用和修改此模板。 Yixin Huang 2025年2月7号
 
-Copyright Yixin Huang, 2025. Licensed under an MIT license. You can copy and mess with this template.
+MIT License. 你可以自由使用和修改此模板。
+
+Copyright Mt, 2024-2025.

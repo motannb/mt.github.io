@@ -1,21 +1,45 @@
-### **Software Engineer Intern**  
-**January 2025 – June 2025 | ByteDance**  
+### 🔬 **研究经历 | Research Experience**
 
-Worked on the development and optimization of large-scale recommendation systems, focusing on algorithm improvements and system efficiency enhancements. Contributed to real-time data processing pipelines and model optimization for personalized content delivery.
+#### **硕士研究生**  
+**2024年 – 至今 | 中南大学 控制科学与工程学院**
 
-#### Key Contributions:  
-- Developed and optimized recommendation algorithms to enhance user engagement and content relevance.  
-- Designed and implemented real-time data processing workflows to improve model inference efficiency.  
-- Conducted A/B testing and performance analysis to refine recommendation strategies based on user behavior data.  
+**研究方向：** 红外测温技术、计算机视觉、多传感器融合
+
+##### 主要工作：
+- 🌡️ 开展水雾干扰下的红外测温技术研究，提出透射率修正方法
+- 👁️ 研发红外-可见光联合视觉测温系统，提高复杂环境下测温精度
+- 📊 发表高水平期刊论文2篇（IEEE TIM），会议论文1篇（YAC2025最佳中文论文奖）
+- 🔬 参与国家级科研项目，负责算法设计与实验验证
 
 ---
 
-### **软件工程师实习生**  
-**2025年1月 – 2025年6月 | 字节跳动**  
+#### **本科生**  
+**2020年 – 2024年 | 北京科技大学 自动化学院**
 
-负责大规模推荐系统的开发与优化，专注于算法改进和系统效率提升。参与实时数据处理管道的构建，并优化模型推理流程，以提升个性化内容推荐效果。
+**主修课程：** 自动控制原理、传感器技术、嵌入式系统、计算机视觉
 
-#### 主要贡献:  
-- 研发并优化推荐算法，提高用户互动率和内容相关性。  
-- 设计并实现实时数据处理流程，提升模型推理的计算效率。  
-- 进行A/B测试与性能分析，基于用户行为数据优化推荐策略。
+##### 主要成就：
+- 📚 系统学习控制理论、传感技术和智能算法基础
+- 🏆 参加多项学科竞赛，获得省级奖项
+- 💡 完成多个课程设计和创新项目
+- 🎓 顺利毕业并获得工学学士学位
+
+---
+
+### 💼 **项目经历 | Project Experience**
+
+#### **动态水雾干扰下的红外测温系统**
+**2024年 – 至今**
+
+- 针对工业场景中水雾干扰问题，设计并实现红外-可见光融合测温系统
+- 开发透射率估计与补偿算法，显著提高测温准确性
+- 成果获YAC2025最佳中文论文奖，相关技术已申请国家发明专利
+
+---
+
+#### **红外测温干扰因素与补偿方法综述研究**
+**2023年 – 2024年**
+
+- 系统梳理红外测温中的各类干扰因素及补偿方法
+- 撰写综述论文发表于IEEE TIM期刊
+- 为后续算法研究奠定理论基础

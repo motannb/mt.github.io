@@ -1,17 +1,67 @@
 @import "./styles.css";
 
-
 :root{
-    --h-title-color:#3948d2;
+    --h-title-color:#2563eb;
+    --primary-color: #3b82f6;
+    --secondary-color: #8b5cf6;
+    --accent-color: #06b6d4;
+    --text-primary: #1e293b;
+    --text-secondary: #64748b;
+    --bg-light: #f8fafc;
+    --bg-white: #ffffff;
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
+    --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.12);
+    --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.15);
 }
 
+/* 导航栏优化 */
 .header {
-    border-bottom: solid 2px var(--bs-blue);
+    border-bottom: none;
+    background: rgba(255, 255, 255, 0.95) !important;
+    backdrop-filter: blur(10px);
+    box-shadow: var(--shadow-sm);
     z-index: 10000;
+    transition: all 0.3s ease;
 }
 
+.header:hover {
+    box-shadow: var(--shadow-md);
+}
+
+.navbar-brand {
+    font-weight: 700;
+    font-size: 1.5rem;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.nav-link {
+    font-weight: 500;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    transform: translateX(-50%);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 80%;
+}
+
+/* 顶部区域优化 */
 .bg-bottom {
-    background-color: var(--h-title-color);
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
 }
 
 .top-section {
@@ -19,11 +69,14 @@
     padding: 10rem 0;
     background-position: center;
     background-size: cover;
-    height: 25rem;
+    height: 28rem;
+    overflow: hidden;
 }
 
 .top-section h2 {
-    font-weight: 400;
+    font-weight: 600;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+    animation: fadeInUp 1s ease;
 }
 
 .top-section .top-section-content {
@@ -38,32 +91,166 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5);
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.7), rgba(139, 92, 246, 0.7));
+    animation: gradientShift 8s ease infinite;
 }
 
+@keyframes gradientShift {
+    0%, 100% { opacity: 0.7; }
+    50% { opacity: 0.5; }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 标题样式优化 */
 section header h2{
     font-family: "Kanit", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !important;
-    color: var(--h-title-color);
-    font-size: 2.3rem;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-size: 2.5rem;
     line-height: 4rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    position: relative;
+    display: inline-block;
 }
 
+section header h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    border-radius: 2px;
+}
+
+/* 内容区域优化 */
 section .main-body{
-    font-size: 1.3rem;
-    font-weight: 200;
-    line-height: 2.4rem;
+    font-size: 1.15rem;
+    font-weight: 400;
+    line-height: 2rem;
+    color: var(--text-primary);
 }
 
+section .main-body h3 {
+    color: var(--text-primary);
+    font-weight: 700;
+    font-size: 1.6rem;
+    margin-top: 2.5rem;
+    margin-bottom: 1.5rem;
+    border-left: 4px solid var(--primary-color);
+    padding-left: 1rem;
+}
 
+section .main-body h4 {
+    color: var(--primary-color);
+    font-weight: 600;
+    font-size: 1.3rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+section .main-body h5 {
+    color: var(--text-secondary);
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+section .main-body ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+section .main-body ul li {
+    position: relative;
+    padding-left: 2rem;
+    margin-bottom: 1rem;
+}
+
+section .main-body ul li::before {
+    content: '▸';
+    position: absolute;
+    left: 0.5rem;
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+section .main-body strong {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+section .main-body a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border-bottom: 1px solid transparent;
+}
+
+section .main-body a:hover {
+    color: var(--secondary-color);
+    border-bottom-color: var(--secondary-color);
+}
+
+/* 背景渐变优化 */
 .bg-gradient-primary-to-secondary-light {
-    background: linear-gradient(45deg, #fcfcfc, #ffffff) !important;
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%) !important;
+    padding: 4rem 0;
 }
 
 .bg-gradient-primary-to-secondary-gray {
-    background: linear-gradient(45deg, #f0f0f0, #f1f1f1) !important;
+    background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%) !important;
+    padding: 4rem 0;
 }
 
+.bg-gradient-primary-to-secondary-dark {
+    background: linear-gradient(135deg, #1e293b 0%, #334155 100%) !important;
+    padding: 4rem 0;
+    color: #f8fafc;
+}
 
+.bg-gradient-primary-to-secondary-dark .main-body {
+    color: #e2e8f0;
+}
+
+.bg-gradient-primary-to-secondary-dark h3,
+.bg-gradient-primary-to-secondary-dark h4 {
+    color: #f8fafc !important;
+}
+
+/* Section间距 */
+section {
+    padding: 5rem 0;
+    transition: all 0.3s ease;
+}
+
+/* 卡片样式 */
+.card-style {
+    background: var(--bg-white);
+    border-radius: 12px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.3s ease;
+}
+
+.card-style:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
 
 .on-top {
     position: relative;
@@ -87,7 +274,7 @@ section .main-body{
     background: rgba(0, 0, 0, 0.4);
 }
 
-
+/* 头像优化 */
 #avatar {
     position: relative;
     height: 0;
@@ -100,13 +287,97 @@ section .main-body{
 
 #avatar img {
     height: max(130px,min(200px,calc(100vw/6)));
-    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 50%;
+    border: 5px solid white;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
 }
 
+#avatar img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 32px rgba(37, 99, 235, 0.3);
+}
+
+/* 徽章样式 */
+.main-body img[alt*="badge"] {
+    display: inline-block;
+    margin: 0.25rem;
+    transition: transform 0.2s ease;
+}
+
+.main-body img[alt*="badge"]:hover {
+    transform: scale(1.1);
+}
+
+/* 响应式优化 */
 @media screen and (max-width: 991px) {
     #avatar {
         margin: 0;
     }
+    
+    section {
+        padding: 3rem 0;
+    }
+    
+    section header h2 {
+        font-size: 2rem;
+    }
+    
+    .top-section {
+        height: 20rem;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    section header h2 {
+        font-size: 1.75rem;
+    }
+    
+    section .main-body {
+        font-size: 1rem;
+    }
+}
+
+/* 滚动动画 */
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+section {
+    animation: slideInUp 0.8s ease;
+}
+
+/* 分隔线美化 */
+hr {
+    border: none;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
+    margin: 3rem 0;
+}
+
+/* Footer优化 */
+footer {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    padding: 3rem 0;
+}
+
+footer a {
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+footer a:hover {
+    color: white;
+    text-decoration: underline;
 }
 
 
